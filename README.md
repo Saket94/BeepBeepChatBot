@@ -29,7 +29,7 @@ This project is build using 1-tier architecture as mentioned below layers:-
 ## BeepBeep_ChatBotUnitTest Project
 
     1. If any error occurs while executing the unit test cases, then check the properties of the .json file which is placed inside the 
-   TestCases folder of the BeepBeep_ChatBotUnitTest project.
+    TestCases folder of the BeepBeep_ChatBotUnitTest project.
 
     2. If "Copy to Output Directory" is not set to "Copy if newer" then make it "Copy if newer".
 
