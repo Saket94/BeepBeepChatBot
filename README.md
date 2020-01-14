@@ -17,11 +17,11 @@ This project is build using 1-tier architecture as mentioned below layers:-
     Once you have added it, you can “chat” with the bot giving him the commands to execute to create your new bot.
     
     To create your bot: First, we have to generate a token with @BotFather to handle messages. 
-    1.Login with telegram and Type @BotFather in the search area.
-    2.Request for New Bot: Now, type /newbot in the message. It will ask you the name of your bot.
-    3.Name of your Bot: @BotFather ask you to name your Bot, you will have to give a name to your bot.  
-    4.User Name of your Bot: @BotFather ask you the user name of your Bot, we will give a user name. user name must be ending with _bot.
-    5. The bot will now give you a token to use when you want to access to the Telegram API. 
+        1.Login with telegram and Type @BotFather in the search area.
+        2.Request for New Bot: Now, type /newbot in the message. It will ask you the name of your bot.
+        3.Name of your Bot: @BotFather ask you to name your Bot, you will have to give a name to your bot.  
+        4.User Name of your Bot: @BotFather ask you the user name of your Bot, we will give a user name. user name must be ending with _bot.
+        5. The bot will now give you a token to use when you want to access to the Telegram API. 
     your bot is done and you can use it!
  
     4. After that, You have to add one NuGet package Telegram. Bot to use inbuilt methods.
