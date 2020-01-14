@@ -1,0 +1,29 @@
+{
+  "TelegramChatModel": [
+    {
+      "ChatId": 972422067,
+      "MessageType": "Message",
+      "Message": "hi"
+    },
+    {
+      "ChatId": 972422067,
+      "MessageType": "Message",
+      "Message": "saket"
+    },
+    {
+      "ChatId": 972422067,
+      "MessageType": "Message",
+      "Message": "indore"
+    },
+    {
+      "ChatId": 972422067,
+      "MessageType": "Message",
+      "Message": "news"
+    },
+    {
+      "ChatId": 972422067,
+      "MessageType": "Message",
+      "Message": "weather"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\BeepBeep_ChatBot.exe
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\BeepBeep_ChatBot.deps.json
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\BeepBeep_ChatBot.runtimeconfig.json
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\BeepBeep_ChatBot.runtimeconfig.dev.json
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\BeepBeep_ChatBot.dll
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\BeepBeep_ChatBot.pdb
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp3.1\Telegram.Bot.dll
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp3.1\BeepBeep_ChatBot.AssemblyInfoInputs.cache
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp3.1\BeepBeep_ChatBot.AssemblyInfo.cs
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp3.1\BeepBeep_ChatBot.csproj.CopyComplete
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp3.1\BeepBeep_ChatBot.dll
+D:\Indorse_Assignments\ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp3.1\BeepBeep_ChatBot.pdb

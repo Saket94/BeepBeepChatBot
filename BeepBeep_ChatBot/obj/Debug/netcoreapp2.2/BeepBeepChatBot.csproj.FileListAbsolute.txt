@@ -1,0 +1,11 @@
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp2.2\BeepBeepChatBot.deps.json
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp2.2\BeepBeepChatBot.runtimeconfig.json
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp2.2\BeepBeepChatBot.runtimeconfig.dev.json
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp2.2\BeepBeepChatBot.dll
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\bin\Debug\netcoreapp2.2\BeepBeepChatBot.pdb
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp2.2\BeepBeepChatBot.csprojResolveAssemblyReference.cache
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp2.2\BeepBeepChatBot.csproj.CoreCompileInputs.cache
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp2.2\BeepBeepChatBot.AssemblyInfoInputs.cache
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp2.2\BeepBeepChatBot.AssemblyInfo.cs
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp2.2\BeepBeepChatBot.dll
+F:\VandanaPurohit\01 temp\BeepBeepChatBot\BeepBeep_ChatBot\obj\Debug\netcoreapp2.2\BeepBeepChatBot.pdb
