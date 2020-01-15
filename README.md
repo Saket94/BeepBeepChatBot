@@ -37,3 +37,8 @@ This project is build using 1-tier architecture as mentioned below layers:-
 
     4. For that reason, we have only added the test cases to check the scenario of the response made by the chat bot using mock testing.
     (i.e by creating the replica of the actual bot response method)
+    
+    
+  ## Error
+
+If after downloading the code, the code does not execute in the visual studio then delete the ".vs"  folder and build the solution once again.
