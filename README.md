@@ -14,7 +14,7 @@ This project is build using 1-tier architecture as mentioned below layers:-
     2. Install Visual Studio 2019.
 
      3. To create a bot, go in your Telegram app and add @BotFather in your contact. This is the bot used to create other new bots..!
-    Once you have added it, you can ìchatî with the bot giving him the commands to execute to create your new bot.
+    Once you have added it, you can ‚Äúchat‚Äù with the bot giving him the commands to execute to create your new bot.
     
     To create your bot: First, we have to generate a token with @BotFather to handle messages. 
         1.Login with telegram and Type @BotFather in the search area.
