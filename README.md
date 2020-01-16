@@ -43,13 +43,13 @@ This project is build using 1-tier architecture as mentioned below layers:-
 
 If after downloading the code, the code does not execute in the visual studio then delete the ".vs"  folder and build the solution once again.
 
-##Reference
+## Reference
 
 Telegram Web https://web.telegram.org
 
 Bots: An introduction for developers https://core.telegram.org
 
-##Steps To Check Bot
+## Steps To Check Bot
 
     1. Visit the "https://web.telegram.org" url and login into your telegram application from web. You can also use the telegram application from your cellphone.
 
