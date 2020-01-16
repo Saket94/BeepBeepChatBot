@@ -9,7 +9,7 @@ using Telegram.Bot.Args;
 
 namespace BeepBeep_ChatBot
 {
-    public class ChatBotMain
+    public class Program
     {
         /// <summary>
         /// Global declaration of userDataList
@@ -51,7 +51,7 @@ namespace BeepBeep_ChatBot
                             userDataList.Add(new UserClass() { userId = Convert.ToString(e.Message.Chat.Id), userName = null, isName = false, location = null });
                         }
 
-                        if ((e.Message.Text.ToLower() == "hi") || (e.Message.Text.ToLower() == "hello") || (e.Message.Text.ToLower() == "hey"))
+                        if (((e.Message.Text.ToLower() == "hi") || (e.Message.Text.ToLower() == "hello") || (e.Message.Text.ToLower() == "hey")) && (e.Message.Text.ToLower() != "/start"))
                         {
                             await chatBot.SendTextMessageAsync(e.Message.Chat.Id, "What is your name ?");
                             return;
@@ -65,7 +65,7 @@ namespace BeepBeep_ChatBot
                             userDataList.Add(new UserClass() { userId = Convert.ToString(e.Message.Chat.Id), userName = null, isName = false, location = null });
                         }
 
-                        if ((e.Message.Text.ToLower() == "hi") || (e.Message.Text.ToLower() == "hello") || (e.Message.Text.ToLower() == "hey"))
+                        if (((e.Message.Text.ToLower() == "hi") || (e.Message.Text.ToLower() == "hello") || (e.Message.Text.ToLower() == "hey")) && (e.Message.Text.ToLower() != "/start"))
                         {
 
                             //again update user datalist for same user for next time... 
@@ -76,7 +76,7 @@ namespace BeepBeep_ChatBot
 
                         var checkUserName = userDataList.Where(x => x.userId == Convert.ToString(e.Message.Chat.Id)).FirstOrDefault();
                         bool isChk = checkUserName.isName;
-                        if (isChk == false)
+                        if ((isChk == false) && (e.Message.Text.ToLower() != "/start"))
                         {
                             userDataList.Where(w => w.userId == Convert.ToString(e.Message.Chat.Id)).Select(w => { w.userName = Convert.ToString(e.Message.Text); w.isName = true; return w; }).ToList();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(e.Message.Chat.Id)).FirstOrDefault();
@@ -84,7 +84,7 @@ namespace BeepBeep_ChatBot
                             await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + ",What is your location ?");
                             return;
                         }
-                        else if (((e.Message.Text.ToLower() != "hi") || (e.Message.Text.ToLower() != "hello") || (e.Message.Text.ToLower() != "hey")) && (e.Message.Text.ToLower() != "news") && ((e.Message.Text.ToLower() != "weather")))
+                        else if (((e.Message.Text.ToLower() != "hi") || (e.Message.Text.ToLower() != "hello") || (e.Message.Text.ToLower() != "hey")) && (e.Message.Text.ToLower() != "news") && (e.Message.Text.ToLower() != "weather") && (e.Message.Text.ToLower() != "/start"))
                         {
                             userDataList.Where(w => w.userId == Convert.ToString(e.Message.Chat.Id)).Select(w => { w.location = Convert.ToString(e.Message.Text); return w; }).ToList();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(e.Message.Chat.Id)).FirstOrDefault();
@@ -93,24 +93,38 @@ namespace BeepBeep_ChatBot
                             await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "What would you like to know news or weather of your loaction : " + userlocation + " ?");
                             return;
                         }
-                        else if (e.Message.Text.ToLower() == "news")
+                        else if ((e.Message.Text.ToLower() == "news") && (e.Message.Text.ToLower() != "/start"))
                         {
                             NewsApiClass objNews = new NewsApiClass();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(e.Message.Chat.Id)).FirstOrDefault();
                             string username = userdata.userName;
                             string userlocation = userdata.location;
                             var chkNews = objNews.GetTopNews(userlocation.ToLower());
-                            await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "Your location : " + userlocation + "  news is :" + Environment.NewLine + chkNews);
+                            if(!string.IsNullOrEmpty(Convert.ToString(chkNews)))
+                            {
+                                await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "Your location : " + userlocation + "  news is :" + Environment.NewLine + chkNews);
+                            }
+                            else
+                            {
+                                await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "No news found," + Environment.NewLine + "For your " + userlocation + " location.");
+                            }
                             return;
                         }
-                        else if (e.Message.Text.ToLower() == "weather")
+                        else if ((e.Message.Text.ToLower() == "weather") && (e.Message.Text.ToLower() != "/start"))
                         {
                             WeatherApiClass objWeather = new WeatherApiClass();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(e.Message.Chat.Id)).FirstOrDefault();
                             string username = userdata.userName;
                             string userlocation = userdata.location;
                             var chkWeather = objWeather.GetWheatherInfo(userlocation.ToLower());
-                            await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "Your location : " + userlocation + "  weather is :" + Environment.NewLine + chkWeather);
+                            if (!string.IsNullOrEmpty(Convert.ToString(chkWeather)))
+                            {
+                                await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "Your location : " + userlocation + "  weather is :" + Environment.NewLine + chkWeather);
+                            }
+                            else
+                            {
+                                await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "No weather found," + Environment.NewLine + "For your " + userlocation + " location.");
+                            }
                             return;
                         }
                     }
@@ -134,7 +148,7 @@ namespace BeepBeep_ChatBot
         {
             string result = "";
             try
-            {                
+            {
                 if (MessageType == "Message")
                 {
                     if (userDataList.Count() == 0)
@@ -145,7 +159,7 @@ namespace BeepBeep_ChatBot
                             userDataList.Add(new UserClass() { userId = Convert.ToString(ChatId), userName = null, isName = false, location = null });
                         }
 
-                        if ((Message.ToLower() == "hi") || (Message.ToLower() == "hello") || (Message.ToLower() == "hey"))
+                        if (((Message.ToLower() == "hi") || (Message.ToLower() == "hello") || (Message.ToLower() == "hey")) && (Message.ToLower() != "/start"))
                         {
                             result = "What is your name ?";
                         }
@@ -158,7 +172,7 @@ namespace BeepBeep_ChatBot
                             userDataList.Add(new UserClass() { userId = Convert.ToString(ChatId), userName = null, isName = false, location = null });
                         }
 
-                        if ((Message.ToLower() == "hi") || (Message.ToLower() == "hello") || (Message.ToLower() == "hey"))
+                        if (((Message.ToLower() == "hi") || (Message.ToLower() == "hello") || (Message.ToLower() == "hey")) && (Message.ToLower() != "/start"))
                         {
                             //again update user datalist for same user for next time... 
                             userDataList.Where(w => w.userId == Convert.ToString(ChatId)).Select(w => { w.userName = null; w.isName = false; w.location = null; return w; }).ToList();
@@ -167,14 +181,15 @@ namespace BeepBeep_ChatBot
 
                         var checkUserName = userDataList.Where(x => x.userId == Convert.ToString(ChatId)).FirstOrDefault();
                         bool isChk = checkUserName.isName;
-                        if (isChk == false)
+
+                        if ((isChk == false) && (Message.ToLower() != "/start"))
                         {
                             userDataList.Where(w => w.userId == Convert.ToString(ChatId)).Select(w => { w.userName = Convert.ToString(Message); w.isName = true; return w; }).ToList();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(ChatId)).FirstOrDefault();
                             string username = userdata.userName;
                             result = username + ",What is your location ?";
                         }
-                        else if (((Message.ToLower() != "hi") || (Message.ToLower() != "hello") || (Message.ToLower() != "hey")) && (Message.ToLower() != "news") && ((Message.ToLower() != "weather")))
+                        else if (((Message.ToLower() != "hi") || (Message.ToLower() != "hello") || (Message.ToLower() != "hey")) && (Message.ToLower() != "news") && (Message.ToLower() != "weather") && (Message.ToLower() != "/start"))
                         {
                             userDataList.Where(w => w.userId == Convert.ToString(ChatId)).Select(w => { w.location = Convert.ToString(Message); return w; }).ToList();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(ChatId)).FirstOrDefault();
@@ -182,26 +197,39 @@ namespace BeepBeep_ChatBot
                             string userlocation = userdata.location;
                             result = username + Environment.NewLine + "What would you like to know news or weather of your loaction : " + userlocation + " ?";
                         }
-                        else if (Message.ToLower() == "news")
+                        else if ((Message.ToLower() == "news") && (Message.ToLower() != "/start"))
                         {
                             NewsApiClass objNews = new NewsApiClass();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(ChatId)).FirstOrDefault();
                             string username = userdata.userName;
                             string userlocation = userdata.location;
                             var chkNews = objNews.GetTopNews(userlocation.ToLower());
-                            result = username + Environment.NewLine + "Your location : " + userlocation + "  news is :" + Environment.NewLine + chkNews;
+                            if (!string.IsNullOrEmpty(Convert.ToString(chkNews)))
+                            {
+                                result = username + Environment.NewLine + "Your location : " + userlocation + "  news is :" + Environment.NewLine + chkNews;
+                            }
+                            else
+                            {
+                                result = username + Environment.NewLine + "No news found," + Environment.NewLine + "For your " + userlocation + " location.";
+                            }
                         }
-                        else if (Message.ToLower() == "weather")
+                        else if ((Message.ToLower() == "weather") && (Message.ToLower() != "/start"))
                         {
                             WeatherApiClass objWeather = new WeatherApiClass();
                             var userdata = userDataList.Where(x => x.userId == Convert.ToString(ChatId)).FirstOrDefault();
                             string username = userdata.userName;
                             string userlocation = userdata.location;
                             var chkWeather = objWeather.GetWheatherInfo(userlocation.ToLower());
-                            result = username + Environment.NewLine + "Your location : " + userlocation + "  weather is :" + Environment.NewLine + chkWeather;
+                            if (!string.IsNullOrEmpty(Convert.ToString(chkWeather)))
+                            {
+                                result = username + Environment.NewLine + "Your location : " + userlocation + "  weather is :" + Environment.NewLine + chkWeather;
+                            }
+                            else
+                            {
+                                result = username + Environment.NewLine + "No weather found," + Environment.NewLine + "For your " + userlocation + " location.";
+                            }
                         }
                     }
-
                 }
             }
             catch (Exception ex)

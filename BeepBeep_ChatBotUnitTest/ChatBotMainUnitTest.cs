@@ -40,7 +40,7 @@ namespace BeepBeep_ChatBotUnitTest
         [DynamicData(nameof(GetJsonData), DynamicDataSourceType.Method)]
         public void BotOnMessageTestMethod(TelegramChatModel telegramChatModel)
         {
-            ChatBotMain chatBotMain = new ChatBotMain();
+            Program chatBotMain = new Program();
             string result = chatBotMain.MockBotMessage(telegramChatModel.ChatId, telegramChatModel.MessageType, telegramChatModel.Message);
             Assert.IsNotNull(result);
         }
