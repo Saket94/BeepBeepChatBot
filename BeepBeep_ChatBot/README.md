@@ -60,3 +60,4 @@ Bots: An introduction for developers https://core.telegram.org
         b.After provding the name , the bot should ask for the location of the person.
         c.When the user provide the location, the bot should ask for the news or weather for the given location.
         d.Now user will enter "news/weather" one by one then the bot will answer the weather of the day of the given location and top three news of the given location.
+  
