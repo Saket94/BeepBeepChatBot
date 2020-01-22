@@ -140,7 +140,7 @@ Bots: An introduction for developers https://core.telegram.org
         d.Now user will enter "news/weather" one by one then the bot will answer the weather of the day of the 
           given location and top three news of the given location.
 
-## BeepBeep_ChatBotUnitTest Project
+## Beep Beep ChatBot UnitTest Project
 
     1. If any error occurs while executing the unit test cases, then check the properties of the .json file 
        which is placed inside the TestCases folder of the BeepBeep_ChatBotUnitTest project.
