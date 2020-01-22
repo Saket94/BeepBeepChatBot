@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +56,14 @@ namespace BeepBeep_ChatBot
                             await chatBot.SendTextMessageAsync(e.Message.Chat.Id, "What is your name ?");
                             return;
                         }
+                        else if (e.Message.Text.ToLower() == "/start")
+                        {
+                            string welcomeMsg = "Welcome to Beep Beep Bot Bot," + Environment.NewLine + "This Chatbot addresses the user by user name and asks about the location of the user " +
+                                                "and gives weather information and Top 3 News of that location." + Environment.NewLine +
+                                                "You can start the conversation with chatbot by (hi/hello)";
+                            await chatBot.SendTextMessageAsync(e.Message.Chat.Id, welcomeMsg);
+                            return;
+                        }
                     }
                     else
                     {
@@ -63,6 +71,15 @@ namespace BeepBeep_ChatBot
                         if (chkUser == null)
                         {
                             userDataList.Add(new UserClass() { userId = Convert.ToString(e.Message.Chat.Id), userName = null, isName = false, location = null });
+                        }
+
+                        if (e.Message.Text.ToLower() == "/start")
+                        {
+                            string welcomeMsg = "Welcome to Beep Beep Bot Bot," + Environment.NewLine + "This Chatbot addresses the user by user name and asks about the location of the user " +
+                                                "and gives weather information and Top 3 News of that location." + Environment.NewLine +
+                                                "You can start the conversation with chatbot by (hi/hello)";
+                            await chatBot.SendTextMessageAsync(e.Message.Chat.Id, welcomeMsg);
+                            return;
                         }
 
                         if (((e.Message.Text.ToLower() == "hi") || (e.Message.Text.ToLower() == "hello") || (e.Message.Text.ToLower() == "hey")) && (e.Message.Text.ToLower() != "/start"))
@@ -100,7 +117,7 @@ namespace BeepBeep_ChatBot
                             string username = userdata.userName;
                             string userlocation = userdata.location;
                             var chkNews = objNews.GetTopNews(userlocation.ToLower());
-                            if(!string.IsNullOrEmpty(Convert.ToString(chkNews)))
+                            if (!string.IsNullOrEmpty(Convert.ToString(chkNews)))
                             {
                                 await chatBot.SendTextMessageAsync(e.Message.Chat.Id, username + Environment.NewLine + "Your location : " + userlocation + "  news is :" + Environment.NewLine + chkNews);
                             }
@@ -163,6 +180,13 @@ namespace BeepBeep_ChatBot
                         {
                             result = "What is your name ?";
                         }
+                        else if (Message.ToLower() == "/start")
+                        {
+                            string welcomeMsg = "Welcome to Beep Beep Bot Bot," + Environment.NewLine + "This Chatbot addresses the user by user name and asks about the location of the user " +
+                                                "and gives weather information and Top 3 News of that location." + Environment.NewLine +
+                                                "You can start the conversation with chatbot by (hi/hello)";
+                            result = welcomeMsg;
+                        }
                     }
                     else
                     {
@@ -170,6 +194,14 @@ namespace BeepBeep_ChatBot
                         if (chkUser == null)
                         {
                             userDataList.Add(new UserClass() { userId = Convert.ToString(ChatId), userName = null, isName = false, location = null });
+                        }
+
+                        if (Message.ToLower() == "/start")
+                        {
+                            string welcomeMsg = "Welcome to Beep Beep Bot Bot," + Environment.NewLine + "This Chatbot addresses the user by user name and asks about the location of the user " +
+                                                "and gives weather information and Top 3 News of that location." + Environment.NewLine +
+                                                "You can start the conversation with chatbot by (hi/hello)";
+                            result = welcomeMsg;
                         }
 
                         if (((Message.ToLower() == "hi") || (Message.ToLower() == "hello") || (Message.ToLower() == "hey")) && (Message.ToLower() != "/start"))
