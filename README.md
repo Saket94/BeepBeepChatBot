@@ -104,8 +104,8 @@ Install docker on your machine with linux environment and follow the below steps
     But when we open the application on heroku we get the below mentioned error.
 
     Error: 503 Service Unavailable Error is occurred:
-    503 Service Unavailable Error is an HTTP response status code indicating that a server is temporarily unable to 
-    handle the request. This may be due to the server being overloaded or down for maintenance. 
+    503 Service Unavailable Error is an HTTP response status code indicating that a server is temporarily 
+    unable to handle the request. This may be due to the server being overloaded or down for maintenance. 
     This particular response code differs from a code like the 500 Internal Server Error.
 
 Link : https://airbrake.io/blog/http-errors/503-service-unavailable
